@@ -1,7 +1,7 @@
 {
   "id": "b88ea9a0-7d6e-11e5-b5de-d57d652482f7",
   "name": "Cake",
-  "friendlyName": "Cake",
+  "friendlyName": "Azure Cake",
   "description": "Build with Cake",
   "author": "Patrik Svensson",
   "helpMarkDown": "[More Information about Cake](https://cakebuild.net)",
@@ -26,6 +26,20 @@
     }
   ],
   "inputs": [
+    {
+      "name": "ConnectedServiceName",
+      "aliases": [
+          "azureSubscription"
+      ],
+      "type": "connectedService:AzureRM",
+      "label": "Azure Subscription",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Azure Resource Manager subscription to configure before running PowerShell",
+      "properties": {
+          "EndpointFilterRule": "ScopeLevel == ManagementGroup || ScopeLevel != ManagementGroup"
+      }
+    },
     {
       "name": "script",
       "type": "filePath",
